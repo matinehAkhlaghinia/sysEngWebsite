@@ -91,7 +91,7 @@
             <div class="col-lg-5 col-sm-6">
                 <hr class="section-heading-spacer">
                 <div class="clearfix"></div>
-                <h2 class="section-heading">Testing</h2>
+                <h2 class="section-heading">Experiments</h2>
                 <p class="lead">Describe the testing we did and why</p>
             </div>
             <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -109,12 +109,13 @@
 
     <div class="container">
         <div class="row">
+            <h2 class="section-heading">Experiments for bots</h2>
             <table class="table">
                 <thead>
                 <tr>
                     <th>Exp #</th>
                     <th>Experiment Title</th>
-                    <th>Experiment details</th>
+                    <th style="text-align: match-parent">Experiment details</th>
                     <th>Experiment results</th>
                     <th>Success and failure</th>
                     <th>Done by</th>
@@ -124,12 +125,57 @@
                 <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>Skype Bot SkyScanner - Typo</td>
+                    <td>I will intentionally make typos in my queries for commands (such as new search) to see whether or not Skype Bot is able to deal with simple and reasonable typo errors.</td>
+                    <td>Any commands given to the bot have to be written word for word and spelt exactly correctly else the bot is unable to process this, even if only a single letter is off.</td>
+                    <td>Failure</td>
+                    <td>Sachchit Prasad</td>
+                    <td>02/12/2016</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Skype Bot SkyScanner - Typo</td>
+                    <td>I will intentionally make typos in my queries for cities searched (such as New Yrk for New York and Belfst for Belfast) to see whether or not Skype Bot is able to deal with simple and reasonable typo errors.</td>
+                    <td>The bot is able to correct for these typos and will return the intended city searched for. At most you can make a typo of two letters (whether changed or omitted, anything beyond this will not work) - this is reasonable as typos aren't likely to be beyond this level.</td>
+                    <td>Success</td>
+                    <td>Sachchit Prasad</td>
+                    <td>02/12/2016</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Skype Bot SkyScanner - Garbage information</td>
+                    <td>I shall query something which does not answer the question asked and does not make sense for a user to put in as an answer. For example, on the prompt for "What is the start date", I shall put in a garbage input and see whether the bot repeats the question or is unable to process it and carries on </td>
+                    <td>The bot just keeps asking the same question over and over as garbage information is fed to it - until something that makes sense to be processed is passed.</td>
+                    <td>Success</td>
+                    <td>Sachchit Prasad</td>
+                    <td>02/12/2016</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Skype Bot SkyScanner - Go back a stage</td>
+                    <td>Is the bot able to go back a step should you make an error at a given stage, there are no commands given which say this is the case so I will check if there are any built in commands that let you do this. </td>
+                    <td>None of the commnads worked to go backwards, suggesting that a user would have to start over should they make a mistake.</td>
+                    <td>Failure</td>
+                    <td>Sachchit Prasad</td>
+                    <td>02/12/2016</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Skype Bot SkyScanner - How dates are handled</td>
+                    <td>When prompted for a date to be entered, if the user is unsure and does not select a specific date, are they able to say mroe general statements like a few days, is this handled? </td>
+                    <td>The bot is able to handle such queries and saying a "few days" tends to return a date 3 days from the current one and "few weeks" returns a date 3 weeks from the current date.</td>
+                    <td>Success</td>
+                    <td>Sachchit Prasad</td>
+                    <td>02/12/2016</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Skype Bot SkyScanner - How dates are handled</td>
+                    <td>When prompted for a date to be entered, if the user enters a date too far in the future, does the system search for this or does it recognise that this is note a reasonable date to give - for far forwards can we book? </td>
+                    <td>The upper limit for dates is 52 weeks from the current date, anything above this is considered to far away and a relevant error message prompting the user to enter a time closer to the current date is given.</td>
+                    <td>Success</td>
+                    <td>Sachchit Prasad</td>
+                    <td>02/12/2016</td>
                 </tr>
                 </tbody>
             </table>
