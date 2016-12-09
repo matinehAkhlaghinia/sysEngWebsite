@@ -154,7 +154,9 @@
                             </div>
                             <div class="col-xs-11">
                                 <h3>What are Bots?</h3>
-                                <p>  </p>
+                                <p> 
+                                  Chat bots are computer programs that mimic conversation with people using artificial intelligence. They can transform the way you interact with the internet from a series of self-initiated tasks to a quasi-conversation. 
+                                </p>
                             </div></div>
 
                     </div>
@@ -471,7 +473,28 @@
                             </div>
                             <div class="col-xs-11">
                                 <h3>Alexa</h3>
-                                <p>  </p>
+                                <h3>Alexa List Skill API</h3>
+                                <p>
+                                    The List Skill API has a bi-directional interface that ensures lists are updated across all channels. That means the API notifies developers when a customer tells Alexa to add something to their list or makes a change to an existing item. Alexa understands the user’s speech request, converts it to a To-do, and sends you a notification with the new item that was added to the list. The List Skill API also updates the lists for Alexa when users make changes to their lists online or in your mobile application. We could apply this to the gym booking request, user adds book a gym class to his/her To-do list or user adds he/she has to attend the gym on a specific day and then Alexa sends a notification to the user’s phone. On the day of gym class, when user asks Alexa what’s on my To-do list, Alexa would remind him/her of going to the gym today.
+                                    Alexa List Skill API is available now but in limited participation beta.
+
+                                </p>
+                                <h3>  Alexa Skills Kit</h3>
+                                <p>
+                                    By using Alexa skills, we can engage voice interaction for getting a reminder from Alexa on the day of the gym class.
+                                    Alexa has a skill which is called Calendar Reader, if we could sync the user calendar with Alexa, we would be able to get updates on the events in our case the gym class everyday, by asking Alexa what events are happening today? Tell me more about this event Alexa.
+                                    Of course this is only possible when we build a bot which is able to add the gym class to user’s calendar immediately after user has booked the class.
+
+                                </p>
+                                <h3> Account Linking Feature </h3>
+                                <p>
+                                    This feature, which allows customers to easily link their accounts with an existing account or service. Account linking allows our skill to securely authenticate a user with popular websites and services like Twitter, Facebook, and many others. Once the user has granted your skill access to the external account, the skill can perform operations with that account on behalf of the user. In our use case, user can log in to his/her Facebook, Skype, Slack account to be able to send messages to the chat bot for booking a gym class or being informed on the gym classes available.
+                                    The main problem is how are we going to do the authentication so that the user can easily use his/her accounts on different services.
+                                    The below graph depicts authentication flow:
+    
+                                </p>
+                                <img src="~/img/alexa_auth.jpg" style="width:500px;height:300px;">
+
                             </div></div>
 
                     </div>
