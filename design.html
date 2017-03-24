@@ -1,10 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Landing Page - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
 
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href=index.html>Microsoft and Nuffield Health Bot</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <a href="requirements.html">Requirements</a>
+                </li>
+
+                <li>
+                    <a href="research.html">Research</a>
+                </li>
+
+                <li>
+                    <a href="hci.html">HCI</a>
+                </li>
+
+                <li>
+                    <a href="design.html">Design</a>
+                </li>
+
+                <li>
+                    <a href="testing.html">Testing</a>
+                </li>
+
+                <li>
+                    <a href="evaluation.html">Evaluation</a>
+                </li>
+
+                <li>
+                    <a href="management.html">Management</a>
+                </li>
+
+                <li>
+                    <a href="development.html">Development</a>
+                </li>
+
+                <li>
+                    <a href="github.html">Github</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+</br></br>
+
+
+
+<!-- Page Content -->
+
+<a  name="services"></a>
+<div class="content-section-a">
+
+    <div class="container">
+        <div class="row">
+
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
+                <h2 class="section-heading">Design</h2>
+                <p class="lead">In this section we will go through the technologies used...</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="content-section-a">
+
+        <div class="container">
+            <div>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#arch" aria-controls="home" role="tab" data-toggle="tab">Architecture</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Hardware</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Class Diagrams</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Design Patterns</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Database Structure</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Development Tools</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Implementation Details</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Analytics</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content" style="padding-left: 30px">
+
+                    <div role="tabpanel" class="tab-pane active" id="arch"></br>
+                        <h3 class="lead">Description</h3>
+                        <h4 class="lead">Interface and Bot Server Interaction</h4>
+                        <p class="well">
+                            The app.js is the server where the bot lives there. So when the user starts the chat with the bot as long as
+                            there's no need for the bot to interact with the API wrapper, the interaction is limited to the interface user is dealing with
+                            and the bot server. For example when the user asks about the closest nuffield gym.
+                        <p>
+                        <h4 class="lead">API Wrapper and Nuffield Booking Bug</h4>
+                        <p class="well">
+                            We are going to make our own API Wrapper upon Nuffield's API to get the data that we need,
+                            which is basically viewing the classes available in a specific Nuffield gym, booking a gym class providing the parameters
+                            like date, time and type of a class or canceling a certain booking.
+                        <p>
+                        <h4 class="lead">Bot Server and API Wrapper Interaction</h4>
+                        <p class="well">
+                            Whenever the user wants to book a class, cancel a class, give feedback or view a list of bookings, bot server sends a request
+                            depending on user's demand and comes back to the user with confirmation or failure response.
+                        <p>
+                        <h4 class="lead">Bot Server and Messaging Queue Interaction</h4>
+                        <p class="well">
+                            As we are collaborating with Team 31, after the bookings, cancelations and feedbacks, the data would be sent
+                            to their messaging queue for organizations to be able to access the data and do analysation on it.
+                        <p>
+                        <center><img src="img/arch.png" style="width:700px;height:500px;"></center>
+                        <h4 class="lead">Speech Design</h4>
+                        <p class="well">
+                            The picture below depicts the user and the bot interaction in a case that user provides all the information in one go.
+                        <p>
+                        <center><img src="img/speech.png" style="width:700px;height:500px;"></center>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile"></br>
+
+
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="messages"></br>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="settings"></br>
+
+
+                    </div>
+                </div>
+
+            </div></div></div></div>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

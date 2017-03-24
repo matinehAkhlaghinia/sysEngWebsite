@@ -48,31 +48,43 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <a href="requirements.html">Requirements</a>
+                </li>
+
                 <li>
                     <a href="research.html">Research</a>
                 </li>
-                <li>
-                    <a href="development.html">Development</a>
-                </li>
+
                 <li>
                     <a href="hci.html">HCI</a>
                 </li>
 
                 <li>
-                    <a href="requirements.html">Requirements</a>
+                    <a href="design.html">Design</a>
                 </li>
+
                 <li>
-                    <a href="testing.html">Experimentation</a>
+                    <a href="testing.html">Testing</a>
                 </li>
+
+                <li>
+                    <a href="evaluation.html">Evaluation</a>
+                </li>
+
+                <li>
+                    <a href="management.html">Management</a>
+                </li>
+
+                <li>
+                    <a href="development.html">Development</a>
+                </li>
+
                 <li>
                     <a href="github.html">Github</a>
                 </li>
-                <li>
-                    <a href="plans.html">Plans for Term 2</a>
-                </li>
-                <li>
-                    <a href="aboutUs.html">About Us</a>
-                </li>
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -93,8 +105,7 @@
             <div class="col-lg-5 col-sm-6">
                 <hr class="section-heading-spacer">
                 <div class="clearfix"></div>
-                <h2 class="section-heading">Experiments</h2>
-                <p class="lead">It was important for us to run experiments on the various prototypes and mini-projects we had built in order to identify the limitations and where there were potential pitfalls. This would allow us to address such problems in the final design and would also give us an idea of what problems may face during use, especially for finding edge cases. Overall, this experimentation allowed us to understand the limitations of the project much better.</p>
+                <h1> Testing </h1>
             </div>
             <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                 </br></br></br>
@@ -110,323 +121,363 @@
 
     <div class="container">
         <div class="row">
-            <h2 class="section-heading">Experiments for bots</h2>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Exp #</th>
-                    <th>Experiment Title</th>
-                    <th style="text-align: match-parent">Experiment details</th>
-                    <th>Experiment results</th>
-                    <th>Success and failure</th>
-                    <th>Done by</th>
-                    <th>Date</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Skype Bot SkyScanner - Typo</td>
-                    <td>I will intentionally make typos in my queries for commands (such as new search) to see whether or not Skype Bot is able to deal with simple and reasonable typo errors.</td>
-                    <td>Any commands given to the bot have to be written word for word and spelt exactly correctly else the bot is unable to process this, even if only a single letter is off.</td>
-                    <td>Failure</td>
-                    <td>Sachchit Prasad</td>
-                    <td>02/12/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Skype Bot SkyScanner - Typo</td>
-                    <td>I will intentionally make typos in my queries for cities searched (such as New Yrk for New York and Belfst for Belfast) to see whether or not Skype Bot is able to deal with simple and reasonable typo errors.</td>
-                    <td>The bot is able to correct for these typos and will return the intended city searched for. At most you can make a typo of two letters (whether changed or omitted, anything beyond this will not work) - this is reasonable as typos aren't likely to be beyond this level.</td>
-                    <td>Success</td>
-                    <td>Sachchit Prasad</td>
-                    <td>02/12/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Skype Bot SkyScanner - Garbage information</td>
-                    <td>I shall query something which does not answer the question asked and does not make sense for a user to put in as an answer. For example, on the prompt for "What is the start date", I shall put in a garbage input and see whether the bot repeats the question or is unable to process it and carries on </td>
-                    <td>The bot just keeps asking the same question over and over as garbage information is fed to it - until something that makes sense to be processed is passed.</td>
-                    <td>Success</td>
-                    <td>Sachchit Prasad</td>
-                    <td>02/12/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Skype Bot SkyScanner - Go back a stage</td>
-                    <td>Is the bot able to go back a step should you make an error at a given stage, there are no commands given which say this is the case so I will check if there are any built in commands that let you do this. </td>
-                    <td>None of the commnads worked to go backwards, suggesting that a user would have to start over should they make a mistake.</td>
-                    <td>Failure</td>
-                    <td>Sachchit Prasad</td>
-                    <td>02/12/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Skype Bot SkyScanner - How dates are handled</td>
-                    <td>When prompted for a date to be entered, if the user is unsure and does not select a specific date, are they able to say mroe general statements like a few days, is this handled? </td>
-                    <td>The bot is able to handle such queries and saying a "few days" tends to return a date 3 days from the current one and "few weeks" returns a date 3 weeks from the current date.</td>
-                    <td>Success</td>
-                    <td>Sachchit Prasad</td>
-                    <td>02/12/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>Skype Bot SkyScanner - How dates are handled</td>
-                    <td>When prompted for a date to be entered, if the user enters a date too far in the future, does the system search for this or does it recognise that this is note a reasonable date to give - for far forwards can we book? </td>
-                    <td>The upper limit for dates is 52 weeks from the current date, anything above this is considered to far away and a relevant error message prompting the user to enter a time closer to the current date is given.</td>
-                    <td>Success</td>
-                    <td>Sachchit Prasad</td>
-                    <td>02/12/2016</td>
-                </tr>
-                </tbody>
-            </table>
 
-            <h2 class="section-heading">Experiments for wit.ai bot</h2>
-            <table class="table">
-              <thead>
-              <tr>
-                  <th>Exp #</th>
-                  <th>Experiment Title</th>
-                  <th style="text-align: match-parent">Experiment details</th>
-                  <th>Experiment results</th>
-                  <th>Success and failure</th>
-                  <th>Done by</th>
-                  <th>Date</th>
-              </tr>
-              </thead>
-                  <tr>
-                      <th scope="row">1</th>
-                      <td>Wit.ai gym class booking bot</td>
-                      <td>When the user says hi, hello or equivalent phrases the bot should start the conversation with what can I do for you?</td>
-                      <td>The problem here is that whatever user says, the bot would ask the question what can I do for you, even if the user asks directly
-                      to book a class without saying hi. </td>
-                      <td>Success</td>
-                      <td>Matineh Akhlaghinia</td>
-                      <td>02/12/2016</td>
-                  </tr>
-                  <tr>
-                      <th scope="row">2</th>
-                      <td>Wit.ai gym class booking bot</td>
-                      <td>When the user says book me class the bot should get back to her/him by asking about the date.</td>
-                      <td>When the users says book me class it comes back to user by asking what date would you want me to book?</td>
-                      <td>Success</td>
-                      <td>Matineh Akhlaghinia</td>
-                      <td>02/12/2016</td>
-                  </tr>
-                  <tr>
-                      <th scope="row">3</th>
-                      <td>Wit.ai gym class booking bot</td>
-                      <td>When the user says book me class today instead of tomorrow, would the bot realize the difference?</td>
-                      <td>The bot won't know the difference and it's hacked to say the same thing after a certain answer</td>
-                      <td>Failure</td>
-                      <td>Matineh Akhlaghinia</td>
-                      <td>02/12/2016</td>
-                  </tr>
-                  <tr>
-                      <th scope="row">4</th>
-                      <td>Wit.ai gym class booking bot</td>
-                      <td>Can the bot simulate a conversation that should go on in our final product?</td>
-                      <td>Yes, the bot is able to simulate a very simple conversation with a user that wants to book a gym class</td>
-                      <td>Success</td>
-                      <td>Matineh Akhlaghinia</td>
-                      <td>02/12/2016</td>
-                  </tr>
-                </tbody>
-            </table>
-			</br
+            <div class="container">
+                <div>
 
-			<div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#arch" aria-controls="home" role="tab" data-toggle="tab">Experiments</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Unit and Integration Testing</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">User acceptanceTesting</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Perfomance Testing</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Security Testing</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Automated Testing</a></li>
 
-			<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
-	<li data-target="#myCarousel" data-slide-to="4"></li>
-	<li data-target="#myCarousel" data-slide-to="5"></li>
-  </ol>
-<center>
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox" style="width: 300px;">
-    <div class="item active">
-      <img src="img/1.png" alt="Chania">
-    </div>
+                    </ul>
 
-    <div class="item">
-      <img src="img/2.png" alt="Chania">
-    </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content" style="padding-left: 30px">
 
-    <div class="item">
-      <img src="img/3.png" alt="Flower">
-    </div>
+                        <div role="tabpanel" class="tab-pane active" id="arch"></br>
 
-    <div class="item">
-      <img src="img/4.png" alt="Flower">
-    </div>
+                            <h2 class="section-heading">Experiments</h2>
+                            <p class="lead">It was important for us to run experiments on the various prototypes and mini-projects we had built in order to identify the limitations and where there were potential pitfalls. This would allow us to address such problems in the final design and would also give us an idea of what problems may face during use, especially for finding edge cases. Overall, this experimentation allowed us to understand the limitations of the project much better.</p>
 
-	<div class="item">
-      <img src="img/5.png" alt="Flower">
-    </div>
+                            <h2 class="section-heading">Experiments for bots</h2>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Exp #</th>
+                                    <th>Experiment Title</th>
+                                    <th style="text-align: match-parent">Experiment details</th>
+                                    <th>Experiment results</th>
+                                    <th>Success and failure</th>
+                                    <th>Done by</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Skype Bot SkyScanner - Typo</td>
+                                    <td>I will intentionally make typos in my queries for commands (such as new search) to see whether or not Skype Bot is able to deal with simple and reasonable typo errors.</td>
+                                    <td>Any commands given to the bot have to be written word for word and spelt exactly correctly else the bot is unable to process this, even if only a single letter is off.</td>
+                                    <td>Failure</td>
+                                    <td>Sachchit Prasad</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Skype Bot SkyScanner - Typo</td>
+                                    <td>I will intentionally make typos in my queries for cities searched (such as New Yrk for New York and Belfst for Belfast) to see whether or not Skype Bot is able to deal with simple and reasonable typo errors.</td>
+                                    <td>The bot is able to correct for these typos and will return the intended city searched for. At most you can make a typo of two letters (whether changed or omitted, anything beyond this will not work) - this is reasonable as typos aren't likely to be beyond this level.</td>
+                                    <td>Success</td>
+                                    <td>Sachchit Prasad</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Skype Bot SkyScanner - Garbage information</td>
+                                    <td>I shall query something which does not answer the question asked and does not make sense for a user to put in as an answer. For example, on the prompt for "What is the start date", I shall put in a garbage input and see whether the bot repeats the question or is unable to process it and carries on </td>
+                                    <td>The bot just keeps asking the same question over and over as garbage information is fed to it - until something that makes sense to be processed is passed.</td>
+                                    <td>Success</td>
+                                    <td>Sachchit Prasad</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Skype Bot SkyScanner - Go back a stage</td>
+                                    <td>Is the bot able to go back a step should you make an error at a given stage, there are no commands given which say this is the case so I will check if there are any built in commands that let you do this. </td>
+                                    <td>None of the commnads worked to go backwards, suggesting that a user would have to start over should they make a mistake.</td>
+                                    <td>Failure</td>
+                                    <td>Sachchit Prasad</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Skype Bot SkyScanner - How dates are handled</td>
+                                    <td>When prompted for a date to be entered, if the user is unsure and does not select a specific date, are they able to say mroe general statements like a few days, is this handled? </td>
+                                    <td>The bot is able to handle such queries and saying a "few days" tends to return a date 3 days from the current one and "few weeks" returns a date 3 weeks from the current date.</td>
+                                    <td>Success</td>
+                                    <td>Sachchit Prasad</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Skype Bot SkyScanner - How dates are handled</td>
+                                    <td>When prompted for a date to be entered, if the user enters a date too far in the future, does the system search for this or does it recognise that this is note a reasonable date to give - for far forwards can we book? </td>
+                                    <td>The upper limit for dates is 52 weeks from the current date, anything above this is considered to far away and a relevant error message prompting the user to enter a time closer to the current date is given.</td>
+                                    <td>Success</td>
+                                    <td>Sachchit Prasad</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                </tbody>
+                            </table>
 
-	<div class="item">
-      <img src="img/6.png" alt="Flower">
-    </div>
-</center>
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+                            <h2 class="section-heading">Experiments for wit.ai bot</h2>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Exp #</th>
+                                    <th>Experiment Title</th>
+                                    <th style="text-align: match-parent">Experiment details</th>
+                                    <th>Experiment results</th>
+                                    <th>Success and failure</th>
+                                    <th>Done by</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Wit.ai gym class booking bot</td>
+                                    <td>When the user says hi, hello or equivalent phrases the bot should start the conversation with what can I do for you?</td>
+                                    <td>The problem here is that whatever user says, the bot would ask the question what can I do for you, even if the user asks directly
+                                        to book a class without saying hi. </td>
+                                    <td>Success</td>
+                                    <td>Matineh Akhlaghinia</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Wit.ai gym class booking bot</td>
+                                    <td>When the user says book me class the bot should get back to her/him by asking about the date.</td>
+                                    <td>When the users says book me class it comes back to user by asking what date would you want me to book?</td>
+                                    <td>Success</td>
+                                    <td>Matineh Akhlaghinia</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Wit.ai gym class booking bot</td>
+                                    <td>When the user says book me class today instead of tomorrow, would the bot realize the difference?</td>
+                                    <td>The bot won't know the difference and it's hacked to say the same thing after a certain answer</td>
+                                    <td>Failure</td>
+                                    <td>Matineh Akhlaghinia</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Wit.ai gym class booking bot</td>
+                                    <td>Can the bot simulate a conversation that should go on in our final product?</td>
+                                    <td>Yes, the bot is able to simulate a very simple conversation with a user that wants to book a gym class</td>
+                                    <td>Success</td>
+                                    <td>Matineh Akhlaghinia</td>
+                                    <td>02/12/2016</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            </br>
 
-  </div>
-    <div class="col-sm-4"></div>
-				</div>
-</div>
+                            <div class="row">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+
+                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                        <!-- Indicators -->
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                                            <li data-target="#myCarousel" data-slide-to="5"></li>
+                                        </ol>
+                                        <center>
+                                            <!-- Wrapper for slides -->
+                                            <div class="carousel-inner" role="listbox" style="width: 300px;">
+                                                <div class="item active">
+                                                    <img src="img/1.png" alt="Chania">
+                                                </div>
+
+                                                <div class="item">
+                                                    <img src="img/2.png" alt="Chania">
+                                                </div>
+
+                                                <div class="item">
+                                                    <img src="img/3.png" alt="Flower">
+                                                </div>
+
+                                                <div class="item">
+                                                    <img src="img/4.png" alt="Flower">
+                                                </div>
+
+                                                <div class="item">
+                                                    <img src="img/5.png" alt="Flower">
+                                                </div>
+
+                                                <div class="item">
+                                                    <img src="img/6.png" alt="Flower">
+                                                </div>
+                                        </center>
+                                        <!-- Left and right controls -->
+                                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+
+                                    </div>
+                                    <div class="col-sm-4"></div>
+                                </div>
+                            </div>
 
 
-           </br>
+                            </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 
 
+                            <h2 class="section-heading">Experiments for the API</h2>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Exp #</th>
+                                    <th>Experiment Title</th>
+                                    <th style="text-align: match-parent">Experiment details</th>
+                                    <th>Experiment results</th>
+                                    <th>Success and failure</th>
+                                    <th>Done by</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Getting the available gym classes</td>
+                                    <td>When calling url "/classes" on your localhost server where the app is running, you will get a list of available classes as a JSON object.</td>
+                                    <td>The result was a list of available classes with the type, data and time attributes.</td>
+                                    <td>Success</td>
+                                    <td>Matineh Akhlaghinia</td>
+                                    <td>15/11/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>View a certain class</td>
+                                    <td>When calling url "/classes/{id}"  where the id is the type of the class, on your localhost server, you'll get a JSON object where you get the description of that certain class.</td>
+                                    <td>The result was a JSON object where the attributes of that certain type of class could be seen.</td>
+                                    <td>Success</td>
+                                    <td>Matineh Akhlaghinia</td>
+                                    <td>15/11/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Book a class</td>
+                                    <td>When calling url "/bookClass/{id}"  where the id is the type of the class, on your localhost server, you'll get a confirmation of your booking. </td>
+                                    <td>The result was a confirmation statement as a string.</td>
+                                    <td>Success</td>
+                                    <td>Matineh Akhlaghinia</td>
+                                    <td>17/11/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>View bookings</td>
+                                    <td>When calling url "/bookedClasses" displays a list of classes that are booked for the user. </td>
+                                    <td>The result was a list of JSON where there are description of each booked class inside.</td>
+                                    <td>Success</td>
+                                    <td>Matineh Akhlaghinia</td>
+                                    <td>17/11/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Hosting the API on Azure VM</td>
+                                    <td>Made the mock API wrapper using microsoft API app and deployed it on Microsoft Azure Virtual Machine. </td>
+                                    <td>http://nuffieldapiwrapper.azurewebsites.net/docs</td>
+                                    <td>Success</td>
+                                    <td>Matineh Akhlaghinia</td>
+                                    <td>10/12/2016</td>
+                                </tr>
+                                </tbody>
+                            </table>
 
-            <h2 class="section-heading">Experiments for the API</h2>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Exp #</th>
-                    <th>Experiment Title</th>
-                    <th style="text-align: match-parent">Experiment details</th>
-                    <th>Experiment results</th>
-                    <th>Success and failure</th>
-                    <th>Done by</th>
-                    <th>Date</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Getting the available gym classes</td>
-                    <td>When calling url "/classes" on your localhost server where the app is running, you will get a list of available classes as a JSON object.</td>
-                    <td>The result was a list of available classes with the type, data and time attributes.</td>
-                    <td>Success</td>
-                    <td>Matineh Akhlaghinia</td>
-                    <td>15/11/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>View a certain class</td>
-                    <td>When calling url "/classes/{id}"  where the id is the type of the class, on your localhost server, you'll get a JSON object where you get the description of that certain class.</td>
-                    <td>The result was a JSON object where the attributes of that certain type of class could be seen.</td>
-                    <td>Success</td>
-                    <td>Matineh Akhlaghinia</td>
-                    <td>15/11/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Book a class</td>
-                    <td>When calling url "/bookClass/{id}"  where the id is the type of the class, on your localhost server, you'll get a confirmation of your booking. </td>
-                    <td>The result was a confirmation statement as a string.</td>
-                    <td>Success</td>
-                    <td>Matineh Akhlaghinia</td>
-                    <td>17/11/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>View bookings</td>
-                    <td>When calling url "/bookedClasses" displays a list of classes that are booked for the user. </td>
-                    <td>The result was a list of JSON where there are description of each booked class inside.</td>
-                    <td>Success</td>
-                    <td>Matineh Akhlaghinia</td>
-                    <td>17/11/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Hosting the API on Azure VM</td>
-                    <td>Made the mock API wrapper using microsoft API app and deployed it on Microsoft Azure Virtual Machine. </td>
-                    <td>http://nuffieldapiwrapper.azurewebsites.net/docs</td>
-                    <td>Success</td>
-                    <td>Matineh Akhlaghinia</td>
-                    <td>10/12/2016</td>
-                </tr>
-                </tbody>
-            </table>
+                            <h2 class="section-heading">Experiments for the Alexa Skill</h2>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Exp #</th>
+                                    <th>Experiment Title</th>
+                                    <th style="text-align: match-parent">Experiment details</th>
+                                    <th>Experiment results</th>
+                                    <th>Success and failure</th>
+                                    <th>Done by</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Uber - Full user Experience/booking system</td>
+                                    <td>I will try to go through the process of calling a uber using the Alexa Skill. I will consider it a success if I am able to book it without any problems. </t>
+                                    <td>Alexa had a problem locating me. I tried many times but it never worked. </td>
+                                    <td>Failure</td>
+                                    <td>Romain Dumon</td>
+                                    <td>7/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>TheGuardian- Search Query for News and Listing</td>
+                                    <td>I will ask the guardian to give me a list of headlines and see how the system responds. A success is if the guardian is able to make a selective query and give me understandable headlines</td>
+                                    <td>The search was a success and the query was handle well by the Skill</td>
+                                    <td>Success</td>
+                                    <td>Romain Dumon</td>
+                                    <td>28/11/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Amazon Alexa- Asking random question </td>
+                                    <td>Ask Alexa random questions to see how well it can recognize words. A success is if Alexa can recognize all the words.</td>
+                                    <td>The results was able to recognize all the words. I am very impressed by the technology </td>
+                                    <td>Success</td>
+                                    <td>Romain Dumon</td>
+                                    <td>28/11/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Just Eat- Ordering Food, testing an ordering system</td>
+                                    <td>I will use this application to order a Pizza. A success is if I order the pizza without having to use my food. Helpful to understand how to design interactive skills.</td>
+                                    <td>I receive my pizza anf was able to order it with ease. We will take into account the design of the application in our design.</td>
+                                    <td>Success</td>
+                                    <td>Romain Dumon</td>
+                                    <td>2/12/2016</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Building a simple hello world Alexa skill and interact with it through a real Echo Dot</td>
+                                    <td>I will go through the whole process of building an Alexa skill from setting up the server to writing the code and uploading it to the Alexa skill store.</td>
+                                    <td>The whole process went fine but the publishing did not work.</td>
+                                    <td>Mostly Successful</td>
+                                    <td>Romain Dumon</td>
+                                    <td>2/12/2016</td>
+                                </tr>
+                                </tbody>
+                                </tbody>
+                            </table>
 
-            <h2 class="section-heading">Experiments for the Alexa Skill</h2>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>Exp #</th>
-                    <th>Experiment Title</th>
-                    <th style="text-align: match-parent">Experiment details</th>
-                    <th>Experiment results</th>
-                    <th>Success and failure</th>
-                    <th>Done by</th>
-                    <th>Date</th>
-                </tr>
-                </thead>
-                <tbody>
-               <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Uber - Full user Experience/booking system</td>
-                    <td>I will try to go through the process of calling a uber using the Alexa Skill. I will consider it a success if I am able to book it without any problems. </t>
-                    <td>Alexa had a problem locating me. I tried many times but it never worked. </td>
-                    <td>Failure</td>
-                    <td>Romain Dumon</td>
-                    <td>7/12/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>TheGuardian- Search Query for News and Listing</td>
-                    <td>I will ask the guardian to give me a list of headlines and see how the system responds. A success is if the guardian is able to make a selective query and give me understandable headlines</td>
-                    <td>The search was a success and the query was handle well by the Skill</td>
-                    <td>Success</td>
-                    <td>Romain Dumon</td>
-                    <td>28/11/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Amazon Alexa- Asking random question </td>
-                    <td>Ask Alexa random questions to see how well it can recognize words. A success is if Alexa can recognize all the words.</td>
-                    <td>The results was able to recognize all the words. I am very impressed by the technology </td>
-                    <td>Success</td>
-                    <td>Romain Dumon</td>
-                    <td>28/11/2016</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Just Eat- Ordering Food, testing an ordering system</td>
-                    <td>I will use this application to order a Pizza. A success is if I order the pizza without having to use my food. Helpful to understand how to design interactive skills.</td>
-                    <td>I receive my pizza anf was able to order it with ease. We will take into account the design of the application in our design.</td>
-                    <td>Success</td>
-                    <td>Romain Dumon</td>
-                    <td>2/12/2016</td>
-                </tr>
-                 <tr>
-                    <th scope="row">5</th>
-                    <td>Building a simple hello world Alexa skill and interact with it through a real Echo Dot</td>
-                    <td>I will go through the whole process of building an Alexa skill from setting up the server to writing the code and uploading it to the Alexa skill store.</td>
-                    <td>The whole process went fine but the publishing did not work.</td>
-                    <td>Mostly Successful</td>
-                    <td>Romain Dumon</td>
-                    <td>2/12/2016</td>
-                </tr>
-                </tbody>
-                </tbody>
-            </table>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile"></br>
+
+
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" id="messages"></br>
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="settings"></br>
+
+
+                        </div>
+                    </div>
+
+                </div></div>
+
         </div>
 
         </br></br>
 
     </div>
-</div>
+
 
 
 
