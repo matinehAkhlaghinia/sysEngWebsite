@@ -126,11 +126,9 @@
                     <li role="presentation" class="active"><a href="#arch" aria-controls="home" role="tab" data-toggle="tab">Architecture</a></li>
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Hardware</a></li>
                     <li role="presentation"><a href="#dev" aria-controls="profile" role="tab" data-toggle="tab">Development Tools</a></li>
-                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Class Diagrams</a></li>
                     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Design Patterns</a></li>
                     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Database Structure</a></li>
                     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Implementation Details</a></li>
-                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Analytics</a></li>
                 </ul>
 
                 <!-- Tab panes -->
@@ -242,8 +240,43 @@
 
                     <div role="tabpanel" class="tab-pane" id="messages"></br>
 
+
+
+
                     </div>
                     <div role="tabpanel" class="tab-pane" id="settings"></br>
+
+                        <h3 class="lead">Observer Pattern</h3>
+                        <div class="well">
+                            <p>
+                                It’s a design pattern where we have one object which has many observers, whenever the state of that object changes, that object will notify all its observers by calling one of their methods. In our application, we had to implement different intents, like viewing, booking, canceling classes. Each of these intents where observers, whenever user sends a message to the bot that includes any of these intents, the event associated to that certain intent starts running.
+                            </p>
+                        </div>
+                        <h3 class="lead">Middleware/Pipelining</h3>
+                        <div class="well">
+                            <p>
+                                This design pattern is basically passing a function’s output as the next function’s input(parameters) which is technically building a flow of transformation. When implementing an intent, as we had to follow a request-response flow, we used this design pattern. So when we got user’s response, we passed it to the next function to respond with the appropriate answer and this goes on until the conversation ends.
+                            </p>
+                        </div>
+                        <h3 class="lead">Dependency Injection</h3>
+                        <div class="well">
+                            <p>
+                                This design pattern is used to pass any services or dependencies to the dependent object. In our application, to be able to keep track of the user’s responses and the classes information, we had to pass in a session object to every method to be able to get user_session as well as transforming the previous user responses. Also in our API implementation, we had to pass in our database configuration to be able to query to the database.
+
+                            </p>
+                        </div>
+                        <h3 class="lead">Waterfall design pattern</h3>
+                        <div class="well">
+                            <p>
+                                For designing our dialog, we used waterfall design pattern which lets you collect input from user using sequence of steps, and a bot is always in a state of providing user with information or asking a question and waiting for input. That’s how we got the information about the classes user wants to book and collected the incomplete information in order to proceed the request.
+                            </p>
+                        </div>
+                        <h3 class="lead">Interpreter Pattern</h3>
+                        <div class="well">
+                            <p>
+                                Given a language, this pattern defines a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language. Since we used Microsoft LUIS (natural language processing framework), we had different intents in our model each of them associated with a certain grammar, after the bot recognized that grammar inside a user’s response, it matches that with the associated intent. The same thing with recognizing different entities inside a specific intent.
+                            </p>
+                        </div>
 
 
                     </div>
