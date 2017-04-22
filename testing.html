@@ -455,6 +455,28 @@
                         </div>
                         <div role="tabpanel" class="tab-pane" id="unit"></br>
 
+                            <h2 class="section-heading">Integration Testing </h2>
+
+                            For testing users and bot interaction we used Microsoft bot framework emulator. The Bot Framework Emulator is a desktop application that allows bot developers to test and debug their bots on localhost or running remotely through a tunnel.
+                            <br><br>
+                            Using the emulator, we were able to unit test each of our intents within the application as well as the integration of our custom API with the bot framework. We were able to see what are the JSON objects that the user is sending and JSON response from the bot. This helped us to easily find out where in the language understanding process the bot is not recognizing a certain intent or entity. Moreover, throughout the log, we were able to see what is response status from the bot and if any internal server error happened within the API requests.
+                            <br><br>
+                            <center><img src="img/testing1.png"></center>
+
+
+                            <h2 class="section-heading">Unit Testing </h2>
+
+                            In our application, since we used natural language processing to make the bot understands user responses better and have some personality, we had to test whether the bot recognized different formats of saying an intent or entity after adding them in LUIS framework. LUIS itself has a test section where you can enter different intents and see if the language is capable of recognizing that and adding them if not. While nothing takes the place of human quality assurance, it was impossible for us to go through all the ways user could make up an intent.
+                            <br><br>
+                            For testing if all the framed sentences for each intent is working properly, we had a queue of test cases consisting of different ways of user’s responses. Then we store the recognized intent in a queue and print them out on a log. In this way we could see which one of the sentences matched with what intent and if that was the correct intent to be matched with.
+                            <br><br>
+                            Throughout our development, we had to make a custom API which was build in Express. To be able to test the different endpoints within our API, we used Postman. Postman is a Google Chrome app for interacting with HTTP APIs. It presents you with a friendly GUI for constructing requests and reading responses.
+                            <br><br>
+                            By using Postman, we were able to see if the query associated to our API endpoint is well written. If the body and parameter formats of the values passed is correct and more importantly we were able to see if we are getting the desired result. Postman not only showed us the status code which helped us in figuring out where in the process we might have been wrong, but also displayed user understandable error messages which made our testing process more smoother.
+                            <br><br>
+                            <center><img src="img/testing2.png"></center>
+
+
                         </div>
 
                         <div role="tabpanel" class="tab-pane" id="user"></br>
