@@ -449,7 +449,9 @@
                 <tbody>
                 <tr class = "active">
                     <td> Architecture design</td>
-                    <td></td>
+                    <td>
+                        Within our architecure, for authenticating Nuffield customers, we needed to redirect them to Team 31 dashboard and use the facebook login authentication system. For us to be able to recognize the users, we associated each user session with a user authentication token. So whenever the user logs in through facebook auth, Team 31 system, inserts the authentication token to our database and in our system, during a time interval of 15s we make requests to our database to see if the token is there or not. If it was there that means the user is logged in and will continue the booking process otherwise it will send a timeout session to the user. This implementation works fine but it's very inefficient in terms of the number of calls we make to the database and in terms of the security. 
+                    </td>
 
                 </tr>
 
