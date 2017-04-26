@@ -123,8 +123,8 @@
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Hardware</a></li>
                     <li role="presentation"><a href="#dev" aria-controls="profile" role="tab" data-toggle="tab">Development Tools</a></li>
                     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Design Patterns</a></li>
-                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Database Structure</a></li>
-                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Implementation Details</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="settings" role="tab" data-toggle="tab">Database Structure</a></li>
+                    <li role="presentation"><a href="#messages2" aria-controls="settings" role="tab" data-toggle="tab">Implementation Details</a></li>
                 </ul>
 
                 <!-- Tab panes -->
@@ -203,43 +203,73 @@
                             The app.js is the server where the bot lives there. So when the user starts the chat with the bot as long as
                             there's no need for the bot to interact with the API wrapper, the interaction is limited to the interface user is dealing with
                             and the bot server. For example when the user asks about the closest nuffield gym.
-                        <p>
+                        </p>
                         <h4 class="lead">API Wrapper and Nuffield Booking Bug</h4>
                         <p class="well">
                             We are going to make our own API Wrapper upon Nuffield's API to get the data that we need,
                             which is basically viewing the classes available in a specific Nuffield gym, booking a gym class providing the parameters
                             like date, time and type of a class or canceling a certain booking.
-                        <p>
+                        </p>
                         <h4 class="lead">Bot Server and API Wrapper Interaction</h4>
                         <p class="well">
                             Whenever the user wants to book a class, cancel a class, give feedback or view a list of bookings, bot server sends a request
                             depending on user's demand and comes back to the user with confirmation or failure response.
-                        <p>
+                        </p>
                         <h4 class="lead">Bot Server and Messaging Queue Interaction</h4>
                         <p class="well">
                             As we are collaborating with Team 31, after the bookings, cancelations and feedbacks, the data would be sent
                             to their messaging queue for organizations to be able to access the data and do analysation on it.
-                        <p>
+                        </p>
                         <center><img src="img/arch.png" style="width:700px;height:500px;"></center>
                         <h4 class="lead">Speech Design</h4>
                         <p class="well">
                             The picture below depicts the user and the bot interaction in a case that user provides all the information in one go.
-                        <p>
+                        </p>
                         <center><img src="img/speech.png" style="width:700px;height:500px;"></center>
+                    </p>
+                       <h3 class="lead">Final Deliverable Architecture Design</h3>
+
+                            <center><img src="img/arch%202.png" style="width:700px"></center>
+
+
                     </div>
                     <div role="tabpanel" class="tab-pane" id="profile"></br><h4 class="lead">Amazon Dot</h4>
                         <p class="well">
                             The only hardware needed for this project was the Amazon Dot so that we could test the Alexa Skill on it during development.
-                        <p>
+                        </p>
 
                     </div>
 
                     <div role="tabpanel" class="tab-pane" id="messages"></br>
-
-
-
+                        The following is a quick schema of our databse:
+                        <div class="well"> <center><img src="img/matin/database.png"></center> </div>
 
                     </div>
+
+                    <div role="tabpanel" class="tab-pane" id="messages2"></br>
+
+                        <h2>Impelementation of Key Functionalities</h2>
+
+                        <p>View Available Classes</p>
+                        <div class="well">
+                            We have trained our bot for View Classes intent which understands different formats of “I want to view available classes”.  We managed to do this through Microsoft LUIS. Through a waterfall design, the bot tries to get information of the date the user wants to see the available classes for. After recognizing the date as an entity, we make a get request to the endpoint /viewAvailableClasses of our API to get the list of available classes for that certain date, providing the date in the body of the request. Then we display the available classes in a carousel which is implemented with Microsoft bot cards.
+                        </div>
+                        <p>Booking Classes</p>
+                        <div class="well">
+                            The bot is also trained to recognize the intent book a class. After the recognition of this intent, it tries to trigger the entities name and date of the class. After making sure this values are not null fallowing the waterfall design, it shows the desired class in a card which the user needs to authenticate himself by clicking on the button “book class”. After user logging in through their facebook account, within a time interval of 15 seconds, we wait for the access token to be received. If the token was received successfully, we carry on the process of booking the class after getting a confirmation from the user, otherwise it would send a timeout message to the user to let them know they haven’t successfully been authenticated within that interval and they need to try again. After confirmation, we make a HTTP POST request to the endpoint /bookClass, providing the name and the date of the class as well as the userID in the body of the request.
+                        </div>
+                        <p>View Active Bookings</p>
+                        <div class="well">
+                            Our bot allows the users to be able to view their active bookings simply by triggering active bookings intent and making a HTTP GET request to the endpoint /viewActiveBookings providing the userID.
+                        </div>
+                        <p>Cancelling Classes</p>
+                        <div class="well">
+                            The same process as booking the class is applied here.
+                        </div>
+
+                    </div>
+
+
                     <div role="tabpanel" class="tab-pane" id="settings"></br>
 
                         <h3 class="lead">Observer Pattern</h3>
@@ -273,6 +303,8 @@
                                 Given a language, this pattern defines a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language. Since we used Microsoft LUIS (natural language processing framework), we had different intents in our model each of them associated with a certain grammar, after the bot recognized that grammar inside a user’s response, it matches that with the associated intent. The same thing with recognizing different entities inside a specific intent.
                             </p>
                         </div>
+
+
 
 
                     </div>
